@@ -7,6 +7,12 @@
   flex-direction: column;
   align-items: flex;
   //   justify-content: center;
+  .aboutSection{
+    display: flex;
+  }
+  .column{
+    margin:3%  30% 3% 0%;
+  }
   .about {
     margin-bottom: 15px;
   }

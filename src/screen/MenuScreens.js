@@ -11,7 +11,7 @@ const MenuScreen = () => {
   return (
     <>
       {/* Conditional rendering based on the selected menu item */}
-      {activePage === 'Home' && <ProfileDetails />}
+      {activePage === 'Home' && <About />}
       {activePage === 'About' && <About />}
     </>
   );

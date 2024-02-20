@@ -26,6 +26,7 @@ const About = () => {
         </p>
       </div>
       <div className={styles.separator}></div>
+      <div  className={styles.aboutSection}>
       <div className={styles.column}>
           <div className={styles.detail}>
             <span>Birthday</span>
@@ -41,6 +42,23 @@ const About = () => {
           </div>
           {/* Add more details in the same format */}
         </div>
+        <div className={styles.column}>
+          <div className={styles.detail}>
+            <span>Birthday</span>
+            <span>29/04/1998</span>
+          </div>
+          <div className={styles.detail}>
+            <span>Birthday</span>
+            <span>29/04/1998</span>
+          </div>
+          <div className={styles.detail}>
+            <span>Birthday</span>
+            <span>29/04/1998</span>
+          </div>
+          {/* Add more details in the same format */}
+        </div>
+        </div>
+        
       <div className={styles.separator}></div>
       
         <div>
