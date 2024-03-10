@@ -1,20 +1,54 @@
 .portfolioContainer {
   background-color: #111;
-  color: #bbb;
   padding: 10%;
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex;
-  //   justify-content: center;
-  .aboutSection{
+  color: #767676;
+  .aboutSection {
     display: flex;
   }
-  .column{
-    margin:3%  30% 3% 0%;
+  .profileDescription {
+    color: #767676;
+    font-weight: 500;
+  }
+  .profileName {
+    color: #fff;
+  }
+  .about {
+    color: #fff;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
   }
   .about {
     margin-bottom: 15px;
+  }
+  .detail {
+    display: flex;
+
+    span {
+      margin-right: 20px;
+    }
+    .detailQuestion {
+      margin-right: 10px;
+      font-weight: 700;
+      color: #fff;
+      min-width: 100px;
+    }
+    .detailAnswer {
+      font-family: Mulish;
+      font-size: 15px;
+      line-height: 30px;
+      letter-spacing: 0.5px;
+      word-wrap: break-word;
+      font-weight: 400;
+      color: #767676;
+    }
   }
   .downloadButton {
     background: #fff;
@@ -32,26 +66,94 @@
   }
   .separator {
     height: 1px;
-    background-color: #323232; 
+    background-color: #323232;
     margin: 10px 0;
   }
   .skillsSection {
     margin-top: 20px;
+    padding: 5%;
 
+    .skillsSectionInner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .sepColumn {
+        width: 45%;
+      }
+    }
+    .skillsHeader {
+      // Your styles for the skills header
+    }
     .skill {
-      margin-bottom: 10px;
-
+      // Your styles for each skill
       .skillName {
-        display: inline-block;
-        width: 100px;
+        // Your styles for the skill name
       }
-
+      .progressBarContainer {
+        width: 100%; // Ensure the container takes the full width
+        background-color: #323232; // Background color of the progress bar container
+      }
       .progressBar {
-        height: 4px;
-        background-color: #444;
-        width: 0;
-        transition: width 0.5s ease-in-out;
+        height: 2px; // Set the height of the progress bar
+        background-color: #7b7b7b; // Color of the filled portion of the progress bar
+        text-align: center; // Center the text inside the progress bar
+
+        .progressText {
+          color: white; // Text color of the percentage
+          line-height: 20px; // Match the line height with the height of the progress bar
+        }
       }
+    }
+  }
+}
+.skillsSection {
+  background-color: #000;
+  color: #efefef;
+  .skillsHeader {
+    color: #fff;
+  }
+}
+.nameNcent {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px 10px 5px;
+}
+
+.KnowledgeSection {
+  height: 250px;
+
+  flex-wrap: wrap;
+  .icon{
+    color:white
+  }
+  .skillsHeader {
+    color: #fff;
+  }
+  ul {
+    list-style: none; /* Remove default list style (bullet point) */
+    padding: 0; /* Remove default padding */
+  }
+
+  li {
+    padding-left: 20px; /* Add some padding to the left to make space for the arrow */
+    position: relative;
+    margin-bottom: 8px;
+    display: flex;
+ 
+    align-items:center; 
+    .icon{
+    margin-right: 8px;
+    font-size: 8px;
+  }
+  }
+
+  .listSeperator {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    ul{
+    
     }
   }
 }

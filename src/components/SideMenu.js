@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './SideMenu.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faEnvelope, faSheetPlastic } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActivePage } from '../redux/counterSlice.js';
 
@@ -31,6 +31,12 @@ const SideMenu = () => {
           onClick={() => handleItemClick('About')}
         >
           <FontAwesomeIcon icon={faInfoCircle} size="sm" style={{ marginRight: '8px' }} /> About
+        </li>
+        <li
+          className={selectedItem === 'Projects' ? styles.active : ''}
+          onClick={() => handleItemClick('Projects')}
+        >
+          <FontAwesomeIcon icon={faSheetPlastic} size="sm" style={{ marginRight: '8px' }} /> Projects
         </li>
         <li
           className={selectedItem === 'Contact' ? styles.active : ''}
