@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import ProfileDetails from '../components/ProfileDetails';
 import About from '../components/About';
+import Projects from '../components/Projects';
 
 const MenuScreen = () => {
     const activePage = useSelector((state) => state.menu.activePage);
@@ -11,8 +12,9 @@ const MenuScreen = () => {
   return (
     <>
       {/* Conditional rendering based on the selected menu item */}
-      {activePage === 'Home' && <About />}
-      {activePage === 'About' && <About />}
+      {activePage === 'Home' && <Projects />}
+      {activePage === 'About' && <Projects />}
+      {activePage === 'Projects' && <Projects />}
     </>
   );
 };

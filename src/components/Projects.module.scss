@@ -1,0 +1,19 @@
+.projects {
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start ;
+    width: 100%;
+    padding: 20px;
+    background-color: #111;
+    .cardList{
+        display: flex;
+        flex-direction: row;
+    }
+    h2{
+        color:#fff
+    }
+    & > *:not(:last-child) {
+        margin-right: 16px; /* Adjust the margin as needed */
+    }
+  }
