@@ -1,0 +1,33 @@
+.app-container {
+  display: flex;
+  font-family: "Mulish", sans-serif;
+}
+
+body,
+body[data-theme='light'] {
+  --colorBackground: #F8F8F8;
+  --colorHeader: #000;
+  --buttonFontcolor:#fff;
+  --generalFontColor: #101010
+}
+
+body[data-theme='dark'] {
+  --colorBackground: #111;
+  --colorHeader: #fff;
+  --buttonFontcolor:#000;
+  --generalFontColor:#efefef
+ }
+
+.lightTheme {
+ #side{
+    background-color: var(--background-light) !important;
+    color: var(--text-light);
+  }
+}
+
+.darkTheme {
+  #side {
+    background-color: var(--background-dark) ;
+    color: var(--text-dark);
+  }
+}

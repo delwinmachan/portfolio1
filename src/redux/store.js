@@ -1,10 +1,10 @@
-
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counterSlice.js';
+import { configureStore } from "@reduxjs/toolkit";
+import slices from "./counterSlice"; // Assuming the above code is in counterSlice.js
 
 const store = configureStore({
   reducer: {
-    menu: counterReducer, 
+    menu: slices.menuReducer,
+    theme: slices.themeReducer,
   },
 });
 

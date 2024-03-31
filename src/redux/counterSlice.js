@@ -10,5 +10,15 @@ const counterSlice = createSlice({
   },
 });
 
+const themeSlice = createSlice({
+  name: "theme",
+  initialState: "light", 
+  reducers: {
+    toggleTheme: (state) => (state === "light" ? "dark" : "light"),
+  },
+});
+
 export const { setActivePage } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { toggleTheme } = themeSlice.actions;
+export default { menuReducer:counterSlice.reducer, themeReducer: themeSlice.reducer };
+
