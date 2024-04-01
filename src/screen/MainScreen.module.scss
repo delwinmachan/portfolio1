@@ -8,14 +8,25 @@ body[data-theme='light'] {
   --colorBackground: #F8F8F8;
   --colorHeader: #000;
   --buttonFontcolor:#fff;
-  --generalFontColor: #101010
+  --generalFontColor: #101010;
+  --progressBarColor:#848484;
+  --progressBarContainer:#CDCDCD;
+  --aboutParacolor: #767676;
+  --cardBackgroundColor:#fff;
+  --cardDescription:#767676;
+  --modalBackgroud:#fff;
 }
 
 body[data-theme='dark'] {
   --colorBackground: #111;
   --colorHeader: #fff;
   --buttonFontcolor:#000;
-  --generalFontColor:#efefef
+  --generalFontColor:#efefef;
+  --progressBarColor:#7b7b7b;
+  --progressBarContainer:#323232;
+  --cardBackgroundColor:#323232;
+  --cardDescription:#bbb;
+  --modalBackgroud:#151515;
  }
 
 .lightTheme {
@@ -23,6 +34,9 @@ body[data-theme='dark'] {
     background-color: var(--background-light) !important;
     color: var(--text-light);
   }
+}
+.parentContainer{
+ display: flex;
 }
 
 .darkTheme {

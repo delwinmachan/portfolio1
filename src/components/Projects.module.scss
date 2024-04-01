@@ -4,15 +4,15 @@
     flex-direction: column;
     justify-content:flex-start ;
     width: 100%;
-    background-color: #111;
-    padding:10%;
+    background-color: var( --colorBackground);
+    padding:10% 2% 10% 10%;
     .cardList{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
     h2{
-        color:#fff
+        color:var(--colorHeader)
     }
     & > *:not(:last-child) {
         margin-right: 16px; /* Adjust the margin as needed */

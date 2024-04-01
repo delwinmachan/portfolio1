@@ -1,5 +1,5 @@
 .portfolioContainer {
-  background-color: var(  --colorBackground);
+  background-color: var(--colorBackground);
   padding: 10%;
   display: flex;
   width: 100%;
@@ -14,10 +14,10 @@
     font-weight: 500;
   }
   .profileName {
-    color: var( --colorHeader);
+    color: var(--colorHeader);
   }
   .about {
-    color:  var( --colorHeader);
+    color: var(--colorHeader);
   }
   .column {
     display: flex;
@@ -37,7 +37,7 @@
     .detailQuestion {
       margin-right: 10px;
       font-weight: 700;
-      color:var( --colorHeader);
+      color: var(--colorHeader);
       min-width: 100px;
     }
     .detailAnswer {
@@ -92,11 +92,13 @@
       }
       .progressBarContainer {
         width: 100%; // Ensure the container takes the full width
-        background-color: #323232; // Background color of the progress bar container
+        background-color: var(--progressBarContainer); // Background color of the progress bar container
       }
       .progressBar {
         height: 2px; // Set the height of the progress bar
-        background-color: #7b7b7b; // Color of the filled portion of the progress bar
+        background-color: var(
+          --progressBarColor
+        ); // Color of the filled portion of the progress bar
         text-align: center; // Center the text inside the progress bar
 
         .progressText {
@@ -108,10 +110,10 @@
   }
 }
 .skillsSection {
-  background-color:var(--buttonFontcolor);
-  color: var( --generalFontColor);
+  background-color: var(--buttonFontcolor);
+  color: var(--generalFontColor);
   .skillsHeader {
-    color:var(--colorHeader);
+    color: var(--colorHeader);
   }
 }
 .nameNcent {
@@ -124,8 +126,8 @@
   height: 250px;
 
   flex-wrap: wrap;
-  .icon{
-    color:white
+  .icon {
+    color: var(--colorHeader);
   }
   .skillsHeader {
     color: var(--colorHeader);
@@ -140,12 +142,12 @@
     position: relative;
     margin-bottom: 8px;
     display: flex;
- 
-    align-items:center; 
-    .icon{
-    margin-right: 8px;
-    font-size: 8px;
-  }
+
+    align-items: center;
+    .icon {
+      margin-right: 8px;
+      font-size: 8px;
+    }
   }
 
   .listSeperator {
@@ -153,6 +155,5 @@
     width: 70%;
     flex-direction: row;
     justify-content: space-between;
-    
   }
 }

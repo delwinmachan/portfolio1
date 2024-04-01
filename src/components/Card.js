@@ -31,14 +31,7 @@ const Card = ({
         </div>
         <p className={styles.description}>{description}</p>
         <div className={styles.hoverScroll}>
-          <div className={styles.readMoreIndicator}>READ MORE</div>
-          <div className={styles.arrowContainer}>
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              className={styles.arrow}
-              onClick={handleCloseModal}
-            />
-          </div>
+          <div className={styles.readMoreIndicator}><span>READ MORE</span></div>
         </div>
       </div>
 

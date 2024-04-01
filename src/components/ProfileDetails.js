@@ -16,9 +16,9 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-const ProfileDetails = () => {
+const ProfileDetails = ({activeTheme}) => {
   const iconStyle = {
-    color: "white",
+    color: activeTheme!=="dark"?"white":"black",
     margin: "10px",
     fontSize: "22px", // Adjust the size as needed
   };

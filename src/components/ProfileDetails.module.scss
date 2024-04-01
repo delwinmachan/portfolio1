@@ -5,11 +5,9 @@
     justify-content: center;
     width:100%;
     color:white;
-    background-color: hsl(180, 6%, 6%);
+    background-color: var(--colorBackground);
     
   }
-  
-  
   .profile {
     display: flex;
     align-items: center;
@@ -65,13 +63,14 @@
     max-width: 55%; 
   }
   h1{
-    font-weight: 600;
+    font-weight: 800;
     margin:0px 0px 15px 0px ;
+    color:var( --colorHeader)
   }
   /* Additional styling for text content */
   p  {
     margin:0px 0px 15px 0px ;
-    color:#bbb;
+    color:var(--aboutParacolor);
   }
   
 .typeWriterDiv{

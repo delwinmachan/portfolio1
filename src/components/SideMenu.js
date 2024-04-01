@@ -57,18 +57,7 @@ const SideMenu = () => {
             style={{ marginRight: "8px" }}
           />{" "}
           Projects
-        </li>
-        <li
-          className={selectedItem === "Contacts" ? styles.active : ""}
-          onClick={() => handleItemClick("Contacts")}
-        >
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            size='sm'
-            style={{ marginRight: "8px" }}
-          />{" "}
-          Contact
-        </li>
+        </li> 
       </ul>
     </div>
   );

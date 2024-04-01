@@ -1,18 +1,17 @@
 /* src/components/SideMenu.module.scss */
 .sideMenu {
-
   position: fixed; /* Fixed position */
   height: 100%;
   top: 0;
   left: 0;
-  background-color: black;
-  color: #bbb;
+  background-color: var(--buttonFontcolor);
+  color: var(--generalFontColor);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:200px;
+  width: 200px;
   ul {
     list-style: none;
     padding: 0;
@@ -26,12 +25,12 @@
     text-align: center; /* Center text horizontally */
     &:hover {
       letter-spacing: 1.2px;
-      color: white;
+      color: var(--colorHeader);
     }
   }
 
   .active {
     font-weight: bold;
-    color: white;
+    color:  var(--colorHeader);
   }
 }

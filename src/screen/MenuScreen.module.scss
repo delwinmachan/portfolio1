@@ -1,12 +1,12 @@
 .menuScreenContainer {
-  
-    width: 100%;
-    min-height: 100vh;
-    margin-left: 200px;
-    display: flex;
-    background-color: #0e1010;
-    width:100%;
-    height: 100%;
-    font-family: 'Mulish', sans-serif;
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  background-color: #0e1010;
+  margin-left: 200px; // Same as the side menu width
+  max-width: calc(100vw - 200px);
+  overflow-x: hidden; // Subtract side menu width from the viewport width
+  width: 100%; 
+  height: 100vh;
+  height: 100%;
+  font-family: "Mulish", sans-serif;
+}
