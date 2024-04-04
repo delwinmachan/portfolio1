@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Card.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {  faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({
-  itemCount,
-  heading,
-  description,
-  details,
-  title,
-  date,
-  content,
-}) => {
+const Card = ({ imageUrl, heading, description, title, date, content,modalIndicator }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleCardClick = () => {
@@ -22,6 +14,9 @@ const Card = ({
     e.stopPropagation();
     setShowModal(false);
   };
+  useEffect(()=>{
+    modalIndicator(showModal)
+  },[showModal])
 
   return (
     <div className={styles.card} onClick={handleCardClick}>
@@ -29,9 +24,12 @@ const Card = ({
         <div className={styles.header}>
           <h2 className={styles.heading}>{heading}</h2>
         </div>
+        <img src={imageUrl} alt='' className={styles.cardImage} />
         <p className={styles.description}>{description}</p>
         <div className={styles.hoverScroll}>
-          <div className={styles.readMoreIndicator}><span>READ MORE</span></div>
+          <div className={styles.readMoreIndicator}>
+            <span>READ MORE</span>
+          </div>
         </div>
       </div>
 

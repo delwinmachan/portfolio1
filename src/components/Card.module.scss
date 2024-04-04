@@ -2,18 +2,44 @@
   margin: 16px;
   cursor: pointer;
   transition: box-shadow 0.3s;
-  height: 300px;
-  width: 250px;
+  height: auto;
+  width: 280px;
   background-color: var(--cardBackgroundColor);
   border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow: hidden;
   padding: 20px;
 
+  .cardImage {
+    width: 100%; /* Make the image full width */
+    height: 200px; /* Maintain the aspect ratio */
+    object-fit: cover; /* Cover the area without stretching */
+    border-top-left-radius: 10px; /* Optional: match the card's border-radius */
+    border-top-right-radius: 10px; /* Optional: match the card's border-radius */
+    margin-bottom: 16px; /* Space between the image and the description */
+  }
+  .cardImage::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent black overlay */
+    border-top-left-radius: 10px; /* Optional: match the card's border-radius */
+    border-top-right-radius: 10px; /* Optional: match the card's border-radius */
+  }
+  .modalImage {
+    width: 100%; /* Make the image full width */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image covers the div without stretching */
+    border-top-left-radius: 8px; /* Optional: match the modal's border-radius */
+    border-top-right-radius: 8px; /* Optional: match the modal's border-radius */
+    margin-bottom: 16px; /* Space between the image and the content */
+  }
   .hoverScroll {
     width: 100%;
     height: auto;
@@ -88,6 +114,9 @@
 
   .description {
     color: var(--cardDescription);
+    text-align: left;
+    text-justify: inter-word;
+    line-height: 1.8;
   }
   .overlayTrigger {
     cursor: pointer;
@@ -98,18 +127,20 @@
   }
 
   .modalOverlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8); // Dark overlay background
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000; // Must be higher than the sidebar's z-index
+    // Allows scrolling if the content is larger than the viewport
   }
-
   .modalContent {
     background: var(--modalBackgroud); // Dark modal background
     color: #f5f5f5; // Light text color
@@ -120,6 +151,9 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); // Subtle shadow for depth
     position: relative;
     z-index: 1001;
+    margin-top: auto;
+    margin-bottom: auto; // These auto margins along with flex will center the modal vertically
+    background: var(--modalBackgroud);
 
     .modalHeader {
       display: flex;

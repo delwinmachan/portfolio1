@@ -10,3 +10,17 @@
   height: 100%;
   font-family: "Mulish", sans-serif;
 }
+@media (max-width: 1024px) {
+  .menuScreenContainer {
+    min-height: 100vh;
+    display: flex;
+    background-color: #0e1010;
+    margin:0px; // Same as the side menu width
+    max-width: 100vw ;
+    overflow-x: hidden; // Subtract side menu width from the viewport width
+    width: 100%; 
+    height: 100vh;
+    height: 100%;
+    font-family: "Mulish", sans-serif;
+  }
+}

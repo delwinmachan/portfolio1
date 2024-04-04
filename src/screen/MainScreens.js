@@ -15,7 +15,7 @@ const MainScreen = () => {
   },[theme])
   return (
     <div className={theme === "light" ? `${styles.lightTheme}` :`${styles.darkTheme}` }>
-      <ThemeToggle />
+      <ThemeToggle activeTheme={theme} />
       <SideMenu />
       <MenuScreen />
     </div>

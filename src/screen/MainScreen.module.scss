@@ -15,6 +15,7 @@ body[data-theme='light'] {
   --cardBackgroundColor:#fff;
   --cardDescription:#767676;
   --modalBackgroud:#fff;
+  --seperator:#dfdfdf;
 }
 
 body[data-theme='dark'] {
@@ -27,6 +28,7 @@ body[data-theme='dark'] {
   --cardBackgroundColor:#323232;
   --cardDescription:#bbb;
   --modalBackgroud:#151515;
+  --seperator:#323232
  }
 
 .lightTheme {

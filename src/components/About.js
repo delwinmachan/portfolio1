@@ -5,6 +5,7 @@ import styles from "./About.module.scss"; // Import SCSS module
 import profilePicture from "../images/pro2.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faFire, faPlay } from "@fortawesome/free-solid-svg-icons";
+
 const About = () => {
   const downloadCV = () => {
     const link = document.createElement("a");
@@ -56,6 +57,7 @@ const About = () => {
   return (
     <div className={styles.portfolioContainer}>
       <div className={styles.about}>About Me</div>
+      
       <div className={styles.profileSection}>
         <h1 className={styles.profileName}>Delwin Thomas</h1>
         {/* Add a subtle separator */}

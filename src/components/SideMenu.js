@@ -1,5 +1,5 @@
 // src/components/SideMenu.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SideMenu.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,22 +7,37 @@ import {
   faInfoCircle,
   faEnvelope,
   faSheetPlastic,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { setActivePage } from "../redux/counterSlice";
-
+import { setActivePage, toggleTheme } from "../redux/counterSlice";
+import ThemeToggle from "./LightMode";
 
 const SideMenu = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const dispatch = useDispatch();
+  const [size, setSize] = useState([0, 0]);
 
+  useEffect(() => {
+    const updateSize = () => {
+      setSize([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize(); // Trigger to set initial size
+    return () => window.removeEventListener("resize", updateSize); // Cleanup on unmount
+  }, []);
   const handleItemClick = (item) => {
     setSelectedItem(item);
     dispatch(setActivePage(item));
   };
 
+  const handleToggle = () => {
+    dispatch(toggleTheme());
+  };
+  const theme = useSelector((state) => state.theme);
   return (
-    <div className={styles.sideMenu} id="side">
+    <div className={styles.sideMenu} id='side'>
       {/* Add your menu items with icons here */}
       <ul>
         <li
@@ -31,10 +46,10 @@ const SideMenu = () => {
         >
           <FontAwesomeIcon
             icon={faHome}
-            size='sm'
+            size={size[0] < 1024 ? "md" : "sm"}
             style={{ marginRight: "8px" }}
           />{" "}
-          Home
+          <span>Home</span>
         </li>
         <li
           className={selectedItem === "About" ? styles.active : ""}
@@ -42,10 +57,10 @@ const SideMenu = () => {
         >
           <FontAwesomeIcon
             icon={faInfoCircle}
-            size='sm'
+            size={size[0] < 1024 ? "md" : "sm"}
             style={{ marginRight: "8px" }}
           />{" "}
-          About
+          <span> About</span>
         </li>
         <li
           className={selectedItem === "Projects" ? styles.active : ""}
@@ -53,11 +68,31 @@ const SideMenu = () => {
         >
           <FontAwesomeIcon
             icon={faSheetPlastic}
-            size='sm'
+            size={size[0] < 1024 ? "md" : "sm"}
             style={{ marginRight: "8px" }}
           />{" "}
-          Projects
-        </li> 
+          <span> Projects</span>
+        </li>
+        {size[0] < 1024 && (
+          <li
+            className={selectedItem === "theme" ? styles.active : ""}
+            onClick={handleToggle}
+          >
+            {theme === "light" ? (
+              <FontAwesomeIcon
+                icon={faSun}
+                size={size[0] < 1024 ? "md" : "sm"}
+                style={{ marginRight: "8px" }}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faMoon}
+                size={size[0] < 1024 ? "md" : "sm"}
+                style={{ marginRight: "8px" }}
+              />
+            )}
+          </li>
+        )}
       </ul>
     </div>
   );

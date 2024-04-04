@@ -1,20 +1,34 @@
 .projects {
-  
-    display:flex;
-    flex-direction: column;
-    justify-content:flex-start ;
-    width: 100%;
-    background-color: var( --colorBackground);
-    padding:10% 2% 10% 10%;
-    .cardList{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: var(--colorBackground);
+  padding: 5% 2% 5% 5%;
+  animation: slideInRight 1.2s ease forwards;
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(-5%);
+      opacity: 0;
     }
-    h2{
-        color:var(--colorHeader)
-    }
-    & > *:not(:last-child) {
-        margin-right: 16px; /* Adjust the margin as needed */
+    to {
+      transform: translateX(0%);
+      opacity: 1;
     }
   }
+  .cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  h2 {
+    color: var(--colorHeader);
+  }
+  & > *:not(:last-child) {
+    margin-right: 16px; /* Adjust the margin as needed */
+  }
+}
+.projectsNoAnimation{
+    animation:none;
+}

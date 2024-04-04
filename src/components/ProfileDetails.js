@@ -4,11 +4,6 @@ import profilePicture from "../images/pro2.jpeg";
 import Typewriter from "./TypingEffect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTimes,
-  faPlus,
-  faEllipsisV,
-} from "@fortawesome/free-solid-svg-icons";
-import {
   faFacebook,
   faFacebookF,
   faInstagram,
@@ -16,24 +11,18 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-const ProfileDetails = ({activeTheme}) => {
+const ProfileDetails = ({ activeTheme }) => {
   const iconStyle = {
-    color: activeTheme!=="dark"?"white":"black",
+    color: activeTheme !== "dark" ? "white" : "black",
     margin: "10px",
     fontSize: "22px", // Adjust the size as needed
   };
 
   return (
     <div className={styles.profileDetails}>
-      <div className={styles.profile}>
-        <div className={styles.circle}></div>
-        <div className={styles.profilePictureContainer}>
-          <img
-            src={profilePicture}
-            alt='Your Profile'
-            className={styles.profilePicture}
-          />
-        </div>
+      <div className={styles.outerContainer}>
+      <div className={styles.profilePictureContainer}>
+        <div class={styles.profilePicture}></div>
       </div>
 
       {/* Add your portfolio details here */}
@@ -64,6 +53,7 @@ const ProfileDetails = ({activeTheme}) => {
           </a>
           {/* Add more icons as needed */}
         </div>
+      </div>
       </div>
     </div>
   );
