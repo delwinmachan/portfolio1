@@ -9,12 +9,18 @@ import MenuScreen from "./MenuScreens";
 
 const MainScreen = () => {
   const theme = useSelector((state) => state.theme);
-  useEffect(()=>{
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    document.body.setAttribute('data-theme', newTheme);
-  },[theme])
+  useEffect(() => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    document.body.setAttribute("data-theme", newTheme);
+  }, [theme]);
   return (
-    <div className={theme === "light" ? `${styles.lightTheme}` :`${styles.darkTheme}` }>
+    <div
+      className={
+        theme === "light"
+          ? `${styles.lightTheme} ${styles.scroll}`
+          : `${styles.darkTheme}  ${styles.scroll}`
+      }
+    >
       <ThemeToggle activeTheme={theme} />
       <SideMenu />
       <MenuScreen />

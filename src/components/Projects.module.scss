@@ -6,7 +6,7 @@
   background-color: var(--colorBackground);
   padding: 5% 2% 5% 5%;
   animation: slideInRight 1.2s ease forwards;
-
+    
   @keyframes slideInRight {
     from {
       transform: translateX(-5%);
