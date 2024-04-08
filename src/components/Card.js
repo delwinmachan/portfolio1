@@ -15,6 +15,13 @@ const Card = ({ imageUrl, heading, description, title, date, content,modalIndica
     setShowModal(false);
   };
   useEffect(()=>{
+    if (showModal) {
+      // When the modal is open, set the body overflow to hidden
+      document.body.style.overflow = 'hidden';
+    } else {
+      // When the modal is closed, reset the body overflow
+      document.body.style.overflow = 'auto';
+    }
     modalIndicator(showModal)
   },[showModal])
 

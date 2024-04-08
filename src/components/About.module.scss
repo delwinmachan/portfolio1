@@ -1,4 +1,4 @@
-.portfolioContainer {
+.portfolioContainerAbout {
   background-color: var(--colorBackground);
   padding: 10%;
   display: flex;
@@ -11,7 +11,7 @@
   @keyframes slideInRight {
     from {
       transform: translateX(-5%);
-      opacity: 0
+      opacity: 0;
     }
     to {
       transform: translateX(0%);
@@ -26,9 +26,14 @@
     font-weight: 500;
   }
   .profileName {
+    font-size: 28px;
     color: var(--colorHeader);
   }
   .about {
+    font-weight: 10000;
+    font-style: bold;
+    font-family: "Montserrat", sans-serif;
+    margin: 0px 0px 15px 0px;
     color: var(--colorHeader);
   }
   .column {
@@ -93,14 +98,10 @@
         width: 45%;
       }
     }
-    .skillsHeader {
-      // Your styles for the skills header
-    }
+
     .skill {
       // Your styles for each skill
-      .skillName {
-        // Your styles for the skill name
-      }
+
       .progressBarContainer {
         width: 100%; // Ensure the container takes the full width
         background-color: var(
@@ -166,7 +167,102 @@
   .listSeperator {
     display: flex;
     width: 70%;
+    max-width: 600px;
     flex-direction: row;
     justify-content: space-between;
   }
 }
+@media (max-width: 768px) {
+  // Tablets and smaller devices
+  .portfolioContainerAbout {
+    padding: 5% 5%;
+    margin-top: 60px;
+    .downloadButton {
+      padding: 9px 25px;
+    }
+  }
+
+  .profileDescription {
+    text-align: left;
+  }
+
+  .aboutSection,
+  .skillsSectionInner {
+    flex-direction: column; // Stack elements vertically on smaller screens
+  }
+  .listSeperator {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  li {
+    display: flex;
+    width: 100%;
+    font-size: 0.7rem;
+  }
+
+  .column,
+  .sepColumn {
+    width: 100%; // Take full width on smaller screens
+  }
+
+  .downloadButton {
+    padding: 11px 20px; // Reduce padding on smaller screens
+  }
+
+  .skillsSection {
+    padding: 5% 5%; // Adjust padding
+  }
+
+  // Adjust font sizes and other elements as needed
+}
+
+@media (max-width: 480px) {
+  .portfolioContainerAbout {
+    padding: 5% 5% 20% 5%;
+  }
+  .detailQuestion,
+  .detailAnswer {
+    display: block; // Stack them vertically
+    margin-right: 0; // Remove right margin
+  }
+  .KnowledgeSection {
+    height: max-content;
+    .listSeperator {
+      display: flex;
+      width: 90%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    li {
+      display: flex;
+      width: 100%;
+      font-size: 0.7rem;
+    }
+  }
+  img,
+  .icon {
+    max-width: 100%; // Prevent overflow and allow scaling
+    // height: auto; // Maintain aspect ratio
+  }
+  .skillName {
+    font-size: 12px;
+  }
+
+  .progressText {
+    font-size: 12px;
+  }
+
+  // Use relative units for fonts to allow scaling
+  body,
+  p {
+    font-size: 1rem; // Use root ems for font sizes
+  }
+  h1 {
+    font-size: 20px;
+  }
+  // ... and so on
+}
+
+// Ensure images and icons scale well

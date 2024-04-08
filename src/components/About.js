@@ -1,8 +1,7 @@
 // pages/portfolio.js
 
 import React from "react";
-import styles from "./About.module.scss"; // Import SCSS module
-import profilePicture from "../images/pro2.jpeg";
+import styles from "./About.module.scss"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faFire, faPlay } from "@fortawesome/free-solid-svg-icons";
 
@@ -55,7 +54,7 @@ const About = () => {
   };
 
   return (
-    <div className={styles.portfolioContainer}>
+    <div className={styles.portfolioContainerAbout}>
       <div className={styles.about}>About Me</div>
       
       <div className={styles.profileSection}>

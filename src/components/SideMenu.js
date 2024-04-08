@@ -46,8 +46,9 @@ const SideMenu = () => {
         >
           <FontAwesomeIcon
             icon={faHome}
-            size={size[0] < 1024 ? "md" : "sm"}
-            style={{ marginRight: "8px" }}
+            size={size[0] < 1124 ? "md" : "sm"}
+            style={{ marginRight: "8px",
+           }}
           />{" "}
           <span>Home</span>
         </li>
@@ -57,7 +58,7 @@ const SideMenu = () => {
         >
           <FontAwesomeIcon
             icon={faInfoCircle}
-            size={size[0] < 1024 ? "md" : "sm"}
+            size={size[0] < 1124 ? "md" : "sm"}
             style={{ marginRight: "8px" }}
           />{" "}
           <span> About</span>
@@ -68,12 +69,12 @@ const SideMenu = () => {
         >
           <FontAwesomeIcon
             icon={faSheetPlastic}
-            size={size[0] < 1024 ? "md" : "sm"}
+            size={size[0] < 1124 ? "md" : "sm"}
             style={{ marginRight: "8px" }}
           />{" "}
           <span> Projects</span>
         </li>
-        {size[0] < 1024 && (
+        {size[0] < 1124 && (
           <li
             className={selectedItem === "theme" ? styles.active : ""}
             onClick={handleToggle}
@@ -81,13 +82,13 @@ const SideMenu = () => {
             {theme === "light" ? (
               <FontAwesomeIcon
                 icon={faSun}
-                size={size[0] < 1024 ? "md" : "sm"}
+                size={size[0] < 1124 ? "md" : "sm"}
                 style={{ marginRight: "8px" }}
               />
             ) : (
               <FontAwesomeIcon
                 icon={faMoon}
-                size={size[0] < 1024 ? "md" : "sm"}
+                size={size[0] < 1124 ? "md" : "sm"}
                 style={{ marginRight: "8px" }}
               />
             )}

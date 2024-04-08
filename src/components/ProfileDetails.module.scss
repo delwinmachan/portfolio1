@@ -77,7 +77,9 @@
   }
 }
 h1 {
-  font-weight: 800;
+  font-weight: 10000;
+  font-style: bold;
+  font-family: "Montserrat", sans-serif;
   margin: 0px 0px 15px 0px;
   color: var(--colorHeader);
 }
@@ -144,11 +146,14 @@ p {
     }
   }
 }
-
-// Medium devices (tablets)
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1124px) {
   .profileDetails {
+    margin-top: 180px;
   }
+}
+// Medium devices (tablets)
+@media (min-width: 601px) and (max-width: 1124px) {
+  
   .outerContainer {
     flex-direction: column;
     // ... adjustments for tablets
@@ -171,8 +176,6 @@ p {
     justify-content: center;
     align-items: center;
 
-    
-
     h1 {
       font-size: 2rem; // Adjust for tablet screens
     }
@@ -186,13 +189,15 @@ p {
 // Smaller devices (phones)
 @media (max-width: 600px) {
   .outerContainer {
-    flex-direction: column; // Stack elements vertically
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; // Stack elements vertically
     height: auto; // Adjust height to content
   }
 
   .profilePictureContainer {
     min-width: 80%; // Adjust picture container size
-    min-height: 40vh; // Adjust picture container height
+    min-height: 290px; // Adjust picture container height
   }
 
   .profilePicture {
@@ -201,8 +206,12 @@ p {
   }
 
   .portfolioDetails {
-    max-width: 90%; // Adjust width to the viewport
-
+    max-width: 90%; 
+    display: flex;
+    flex-direction: column;
+    text-align: center;// Adjust width to the viewport
+    justify-content: center;
+    align-items: center;
     h1 {
       font-size: 1.5rem; // Adjust heading size
     }

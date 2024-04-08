@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
   name: "menu",
-  initialState: { activePage: "Home" }, // Ensure initialState is defined
+  initialState: { activePage: "Projects" }, // Ensure initialState is defined
   reducers: {
     setActivePage: (state, action) => {
       state.activePage = action.payload;

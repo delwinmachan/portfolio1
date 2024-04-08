@@ -48,7 +48,7 @@ const ThemeToggle = ({ activeTheme }) => {
         transform: "translateY(-50%)",
         borderRadius: "30px 0 0 30px",
         border: "none",
-        display:size[0]<1025&& 'none',
+        display:size[0]<1125&& 'none',
       }}
     >
       {theme === "light" ? (

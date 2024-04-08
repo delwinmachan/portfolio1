@@ -45,7 +45,7 @@ const ProfileDetails = ({ activeTheme }) => {
             <FontAwesomeIcon icon={faLinkedinIn} style={iconStyle} />
           </a>
           <a
-            href='https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fdirect%2Finbox%2F%3F__coig_login%3D1'
+            href='https://www.instagram.com/chanandler_bong66/'
             target='_blank'
             rel='noopener noreferrer'
           >

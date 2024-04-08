@@ -2,8 +2,9 @@
   margin: 16px;
   cursor: pointer;
   transition: box-shadow 0.3s;
-  height: auto;
-  width: 280px;
+
+  max-height: 400px;
+  width: 100%;
   background-color: var(--cardBackgroundColor);
   border: none;
   display: flex;
@@ -13,9 +14,26 @@
   overflow: hidden;
   padding: 20px;
 
+  @media (min-width: 392px) {
+    width: 70%;
+    // margin: 8PX; // Two cards in a row
+  }
+  @media (min-width: 600px) {
+    width: 100%; // Two cards in a row
+  }
+
+  @media (min-width: 768px) {
+    width: 37.33%; // Three cards in a row
+  }
+  @media (min-width: 1100px) {
+    width: 40%; // Three cards in a row
+  }
+  @media (min-width: 1200px) {
+    width: 25.33%; // // Three cards in a row
+  }
   .cardImage {
     width: 100%; /* Make the image full width */
-    height: 200px; /* Maintain the aspect ratio */
+    height: 150px; /* Maintain the aspect ratio */
     object-fit: cover; /* Cover the area without stretching */
     border-top-left-radius: 10px; /* Optional: match the card's border-radius */
     border-top-right-radius: 10px; /* Optional: match the card's border-radius */
@@ -126,54 +144,116 @@
     cursor: pointer;
   }
 
+  // .modalOverlay {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   display: flex;
+  //   width: 100%;
+  //   height: 100%;
+  //   justify-content: center;
+  //   align-items: center;
+  //   background-color: rgba(0, 0, 0, 0.8);
+  //   z-index: 1000; // Must be higher than the sidebar's z-index
+  //   // Allows scrolling if the content is larger than the viewport
+  //   @media (min-width: 392px) {
+  //     .modalContent {
+  //       width: 60%;
+  //     }
+  //     // margin: 8PX; // Two cards in a row
+  //   }
+  //   @media (min-width: 600px) {
+  //     .modalContent {
+  //       width: 60%;
+  //     } // Two cards in a row
+  //   }
+
+  //   @media (min-width: 768px) {
+  //     .modalContent {
+  //       width: 60%;
+  //     } // Three cards in a row
+  //   }
+  // }
+  // .modalContent {
+  //   background: var(--modalBackgroud); // Dark modal background
+  //   color: #f5f5f5; // Light text color
+  //   padding: 32px; // Padding around the modal content
+  //   border-radius: 8px;
+  //   max-width: 600px; // Maximum width of the modal
+  //   width: 100%;
+  //   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); // Subtle shadow for depth
+  //   position: relative;
+  //   z-index: 1001;
+  //   margin-top: auto;
+  //   margin-bottom: auto; // These auto margins along with flex will center the modal vertically
+  //   background: var(--modalBackgroud);
+
+  //   .modalHeader {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     margin-bottom: 16px;
+
+  //     h2 {
+  //       margin: 0;
+  //     }
+
+  //     .closeButton {
+  //       cursor: pointer;
+  //       font-size: 24px;
+  //       color: #ccc; // Close button color
+  //       border: none;
+  //       background: none;
+  //     }
+  //   }
+
+  //   .modalBody {
+  //     p {
+  //       margin-top: 16px;
+  //       line-height: 1.6;
+  //     }
+  //     color: var(--colorHeader);
+  //   }
+
+  //   .modalFooter {
+  //     margin-top: 24px;
+  //     display: flex;
+  //     justify-content: center;
+  //     color: var(--colorHeader);
+  //     .socialIcons {
+  //       display: flex;
+  //       justify-content: center;
+  //       align-items: center;
+  //     }
+  //   }
+  // }
   .modalOverlay {
-    position: absolute;
+    position: fixed; // Use `fixed` instead of `absolute` to cover the entire viewport
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
     width: 100%;
     height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000; // Must be higher than the sidebar's z-index
-    // Allows scrolling if the content is larger than the viewport
+    z-index: 1000;
+    overflow-y: auto; // Enable scroll on the overlay if the content is larger than the screen
   }
+
   .modalContent {
-    background: var(--modalBackgroud); // Dark modal background
-    color: #f5f5f5; // Light text color
-    padding: 32px; // Padding around the modal content
+    color: #f5f5f5;
+    padding: 20px;
     border-radius: 8px;
-    max-width: 600px; // Maximum width of the modal
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); // Subtle shadow for depth
+    width: 90%; // Start with a high percentage for smaller devices
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: relative;
-    z-index: 1001;
-    margin-top: auto;
-    margin-bottom: auto; // These auto margins along with flex will center the modal vertically
+    margin: 20px; // Margin to avoid touching the viewport edges
+
     background: var(--modalBackgroud);
-
-    .modalHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-
-      h2 {
-        margin: 0;
-      }
-
-      .closeButton {
-        cursor: pointer;
-        font-size: 24px;
-        color: #ccc; // Close button color
-        border: none;
-        background: none;
-      }
-    }
-
     .modalBody {
       p {
         margin-top: 16px;
@@ -181,26 +261,66 @@
       }
       color: var(--colorHeader);
     }
+  }
 
-    .modalFooter {
-      margin-top: 24px;
+  @media (min-width: 392px) {
+    .modalContent {
+      width: 80%; // Slightly larger screens can accommodate a wider modal
+    }
+  }
+
+  @media (min-width: 600px) {
+    .modalContent {
+      width: 70%; // Further increase the width for larger devices
+    }
+  }
+
+  @media (min-width: 768px) {
+    .modalContent {
+      width: 60%; // Suitable width for tablets and small desktop screens
+      padding: 32px; // Increase padding for larger screens
+    }
+  }
+
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .closeButton {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ccc;
+    border: none;
+    background: none;
+  }
+
+  .modalBody {
+    p {
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+  }
+
+  .modalFooter {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    .socialIcons {
       display: flex;
       justify-content: center;
-      color: var(--colorHeader);
-      .socialIcons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      align-items: center;
 
-        svg {
-          // Assuming FontAwesome SVGs are being used
-          margin: 0 8px;
-          font-size: 20px;
-          color: var(--colorHeader); // Icons color matching the light text
+      svg {
+        margin: 0 8px;
+        font-size: 20px;
+        color: var(--colorHeader);
 
-          &:hover {
-            color: #999; // Color on hover
-          }
+        &:hover {
+          color: #999;
         }
       }
     }

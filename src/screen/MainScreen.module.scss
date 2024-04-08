@@ -2,57 +2,63 @@
   display: flex;
   font-family: "Mulish", sans-serif;
 }
-.scroll{
+// .scroll {
+//   ::-webkit-scrollbar-track {
+//     background-color: var(--progressBarColor);
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     background-color: var(--colorBackground);
+//   }
+// }
+
+
+@media (max-width: 1024px) {
+  .scroll {
+    min-height:800px;
   
-  min-height: 800px;
-  ::-webkit-scrollbar-track {
-    background-color: #7b7b7b;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #111;
-}
+  }
 }
 body,
-body[data-theme='light'] {
-  --colorBackground: #F8F8F8;
+body[data-theme="light"] {
+  --colorBackground: #f8f8f8;
   --colorHeader: #000;
-  --buttonFontcolor:#fff;
+  --buttonFontcolor: #fff;
   --generalFontColor: #101010;
-  --progressBarColor:#848484;
-  --progressBarContainer:#CDCDCD;
+  --progressBarColor: #848484;
+  --progressBarContainer: #cdcdcd;
   --aboutParacolor: #767676;
-  --cardBackgroundColor:#fff;
-  --cardDescription:#767676;
-  --modalBackgroud:#fff;
-  --seperator:#dfdfdf;
+  --cardBackgroundColor: #fff;
+  --cardDescription: #767676;
+  --modalBackgroud: #fff;
+  --seperator: #dfdfdf;
 }
 
-body[data-theme='dark'] {
+body[data-theme="dark"] {
   --colorBackground: #111;
   --colorHeader: #fff;
-  --buttonFontcolor:#000;
-  --generalFontColor:#efefef;
-  --progressBarColor:#7b7b7b;
-  --progressBarContainer:#323232;
-  --cardBackgroundColor:#323232;
-  --cardDescription:#bbb;
-  --modalBackgroud:#151515;
-  --seperator:#323232
- }
+  --buttonFontcolor: #000;
+  --generalFontColor: #efefef;
+  --progressBarColor: #7b7b7b;
+  --progressBarContainer: #323232;
+  --cardBackgroundColor: #323232;
+  --cardDescription: #bbb;
+  --modalBackgroud: #151515;
+  --seperator: #323232;
+}
 
 .lightTheme {
- #side{
+  #side {
     background-color: var(--background-light) !important;
     color: var(--text-light);
   }
 }
-.parentContainer{
- display: flex;
+.parentContainer {
+  display: flex;
 }
 
 .darkTheme {
   #side {
-    background-color: var(--background-dark) ;
+    background-color: var(--background-dark);
     color: var(--text-dark);
   }
 }
