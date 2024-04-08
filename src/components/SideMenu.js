@@ -12,10 +12,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { setActivePage, toggleTheme } from "../redux/counterSlice";
-import ThemeToggle from "./LightMode";
 
 const SideMenu = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState("Home");
   const dispatch = useDispatch();
   const [size, setSize] = useState([0, 0]);
 

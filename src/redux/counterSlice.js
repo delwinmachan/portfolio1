@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
   name: "menu",
-  initialState: { activePage: "Projects" }, // Ensure initialState is defined
+  initialState: { activePage: "Home" }, // Ensure initialState is defined
   reducers: {
     setActivePage: (state, action) => {
       state.activePage = action.payload;
@@ -12,7 +12,7 @@ const counterSlice = createSlice({
 
 const themeSlice = createSlice({
   name: "theme",
-  initialState: "light", 
+  initialState: "dark", 
   reducers: {
     toggleTheme: (state) => (state === "light" ? "dark" : "light"),
   },
