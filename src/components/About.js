@@ -1,15 +1,19 @@
 // pages/portfolio.js
 
 import React from "react";
-import styles from "./About.module.scss"; 
+import styles from "./About.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faFire, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faFire,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = process.env.PUBLIC_URL + "/resume-2023.pdf";
-    link.download = "resume-2023.pdf";
+    link.href = process.env.PUBLIC_URL + "/Resume2024Canv-1.pdf";
+    link.download = "/Resume2024Canv-1.pdf";
     link.click();
   };
   function calculateAge(dobString) {
@@ -56,7 +60,7 @@ const About = () => {
   return (
     <div className={styles.portfolioContainerAbout}>
       <div className={styles.about}>About Me</div>
-      
+
       <div className={styles.profileSection}>
         <h1 className={styles.profileName}>Delwin Thomas</h1>
         {/* Add a subtle separator */}
