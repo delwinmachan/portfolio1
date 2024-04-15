@@ -144,7 +144,6 @@
     cursor: pointer;
   }
 
-  
   .modalOverlay {
     position: fixed; // Use `fixed` instead of `absolute` to cover the entire viewport
     top: 0;
@@ -162,14 +161,25 @@
   .modalContent {
     color: #f5f5f5;
     padding: 20px;
+    max-height: 80vh;
     border-radius: 8px;
     width: 90%; // Start with a high percentage for smaller devices
     max-width: 600px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: relative;
     margin: 20px; // Margin to avoid touching the viewport edges
-
     background: var(--modalBackgroud);
+    .modalHeader {
+      display: flex;
+      color: var(--generalFontColor);
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      h2{
+        margin-right: 4px;
+      }
+    }
     .modalBody {
       p {
         margin-top: 16px;
@@ -193,82 +203,83 @@
 
   @media (min-width: 768px) {
     .modalContent {
-      width: 60%; // Suitable width for tablets and small desktop screens
+      width: 60%;
+       // Suitable width for tablets and small desktop screens
       padding: 32px; // Increase padding for larger screens
     }
   }
   @media (max-width: 768px) {
-   
-  .modalHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-.readMoreIndicator span {
-  background-color: var(--cardBackgroundColor);
-    transform: translateX(0);
-}
-
-  .closeButton {
-    cursor: pointer;
-    font-size: 24px;
-    color: #ccc;
-    border: none;
-    background: none;
-  }
-
-  .modalBody {
-    p {
-      margin-top: 16px;
-      line-height: 1.6;
+    .modalHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
     }
-  }
+    .readMoreIndicator span {
+      background-color: var(--cardBackgroundColor);
+      transform: translateX(0);
+    }
 
-  .modalFooter {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
+    .closeButton {
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--generalFontColor);
+      border: none;
+      background: none;
+    }
 
-    .socialIcons {
+    .modalBody {
+      p {
+        margin-top: 16px;
+        line-height: 1.6;
+      }
+    }
+
+    .modalFooter {
+      margin-top: 24px;
       display: flex;
       justify-content: center;
-      align-items: center;
 
-      svg {
-        margin: 0 8px;
-        font-size: 20px;
-        color: var(--colorHeader);
+      .socialIcons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        &:hover {
-          color: #999;
+        svg {
+          margin: 0 8px;
+          font-size: 20px;
+          color: var(--colorHeader);
+
+          &:hover {
+            color: #999;
+          }
         }
       }
     }
-  }
 
-  // Responsive adjustments
-  @media (min-width: 768px) {
-    .modalContent {
-      width: 60%;
+    // Responsive adjustments
+    @media (min-width: 768px) {
+      .modalContent {
+        width: 60%;
+      }
     }
   }
-}
-@keyframes read-more-anim-2 {
-  0% {
-    transform-origin: left center;
-    transform: scaleX(0.2);
+  @keyframes read-more-anim-2 {
+    0% {
+      transform-origin: left center;
+      transform: scaleX(0.2);
+    }
+    70% {
+      transform-origin: left center;
+      transform: scaleX(1);
+    }
+    71% {
+      transform-origin: right center;
+    }
+    100% {
+      transform-origin: right center;
+      transform: scaleX(0.2);
+    }
   }
-  70% {
-    transform-origin: left center;
-    transform: scaleX(1);
-  }
-  71% {
-    transform-origin: right center;
-  }
-  100% {
-    transform-origin: right center;
-    transform: scaleX(0.2);
-  }
-}
 }
