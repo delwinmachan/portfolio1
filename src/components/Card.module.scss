@@ -14,8 +14,9 @@
   overflow: hidden;
   padding: 20px;
 
-  @media (min-width: 392px) {
-    width: 70%;
+  @media (min-width: 200px) and (max-width: 600px) {
+    width: 95%;
+    margin:0px 4px 12px 0px;
     // margin: 8PX; // Two cards in a row
   }
   @media (min-width: 600px) {
