@@ -12,8 +12,8 @@ import {
 const About = () => {
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = process.env.PUBLIC_URL + "/Resume2024Canv-1.pdf";
-    link.download = "/Resume2024Canv-1.pdf";
+    link.href = process.env.PUBLIC_URL + "/Delwin_Thomas_cv_2024JULY.pdf";
+    link.download = "/Delwin_Thomas_cv_2024JULY.pdf";
     link.click();
   };
   function calculateAge(dobString) {
