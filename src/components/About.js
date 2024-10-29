@@ -68,7 +68,7 @@ const About = () => {
         <p className={styles.profileDescription}>
           Hello! I'm Delwin Thomas, a results-driven web developer specializing
           in React, Next.js, and JavaScript. With a strong command of Recoil and
-          Redux for efficient state management, I bring proficiency in Angular
+          Redux for efficient state management,I bring proficiency in Angular
           and experience in crafting robust web applications. My skills extend
           to utilizing testing libraries such as Jest to ensure code quality.
         </p>
