@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import SideMenu from "./components/SideMenu";
 import ProfileDetails from "./components/ProfileDetails";
@@ -17,5 +16,4 @@ const App = () => {
     </Provider>
   );
 };
-
 export default App;
